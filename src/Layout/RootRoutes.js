@@ -15,8 +15,8 @@ const [decks, setDecks] = useState([])
     useEffect(() => {
         async function fetchDecks() {
             try {
-                const fetchDecks = await listDecks() 
-                setDecks(fetchDecks)
+                const fetchedDecks = await listDecks() 
+                setDecks(fetchedDecks)
             } catch (error) {
                 console.error("Error fetching decks:", error)
             }
@@ -32,6 +32,7 @@ const [decks, setDecks] = useState([])
             <Route path="decks/:deckId/study" element={<Study decks={decks}/>} />
             <Route path="decks/:deckId/edit" element={<CreateEditDeck />} />
             <Route path="decks/:deckId/cards/new" element={<AddEditCard />} />
+            <Route path="decks/:deckId/cards/:cardId/edit" element={<AddEditCard />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     );
