@@ -1,3 +1,6 @@
+// "/"
+// Shows a list of decks wirh options to create, view, study, or delete a deck
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { deleteDeck } from "../utils/api/index";
